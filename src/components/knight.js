@@ -27,7 +27,11 @@ class Knight {
                         start_pos[0] + possible_move[0],
                         start_pos[1] + possible_move[1],
                     ];
-                    // TODO: check move is valid (within board)
+                    // Check move is valid (within board 8x8)
+                    if (end_pos[0] < 0 || end_pos[0] > 8
+                        || end_pos[1] < 0 || end_pos[1] > 8) {
+                        continue;
+                    }
 
                     // Copy the path array
                     const new_path = value.slice(); //.push(end_pos);
@@ -41,6 +45,7 @@ class Knight {
                     if (end_pos[0] === destination[0]
                         && end_pos[1] === destination[1]) {
                         console.log("Found path:", new_path);
+                        console.log("All paths:", result);
                         return new_path;
                     }
                 }
