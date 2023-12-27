@@ -1,3 +1,4 @@
+import Knight from "./knight";
 import Utils from "./utils";
 
 class Board {
@@ -19,6 +20,11 @@ class Board {
             square.className = "square light";
         else
             square.className = "square dark";
+
+        square.addEventListener('click', (e) => {
+            const path = Knight.moves(this.knightPosition, [row, col]);
+            console.log("Knigh path:", path);
+        });
         return square;
     }
 
