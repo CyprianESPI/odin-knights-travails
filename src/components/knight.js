@@ -1,5 +1,5 @@
 class Knight {
-    static move(origin, destination) {
+    static moves(origin, destination) {
         console.log(origin, destination);
         return true;
     }
