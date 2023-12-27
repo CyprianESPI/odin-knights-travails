@@ -14,25 +14,27 @@ class Knight {
         result[origin_key] = [origin];
 
         for (let d = 0; d < max_depth; d++) {
+            console.log("Depth:", d);
+            // TODO: do not recompute already computed keys
             for (const [key, value] of Object.entries(result)) {
-                console.log("Start move...");
-                console.log(`${key}: ${value}`);
+                console.log("Start move...", `${key}: ${value}`);
 
                 Knight.POSSIBLE_MOVES.forEach(possible_move => {
-                    console.log("Moving...");
                     const start_pos = value[value.length - 1];
                     const end_pos = [
                         start_pos[0] + possible_move[0],
                         start_pos[1] + possible_move[1],
                     ];
-                    console.log("s>e", start_pos, end_pos);
+                    // TODO: check move is valid (within board)
+
                     // Copy the path array
                     const new_path = value.slice(); //.push(end_pos);
                     new_path.push(end_pos);
-                    console.log("new_path", new_path);
+                    // Add to dict
                     const new_key = Knight.getPosKey(end_pos);
                     result[new_key] = new_path;
-                    console.log("res:", result);
+
+                    // Todo check if destination is in dict
                 });
             }
         }
