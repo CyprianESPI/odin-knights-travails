@@ -1,4 +1,6 @@
-# Odin template
+# Odin Knights Travails
+
+https://username.github.io/knights-travails/
 
 ## Webpack for web
 
@@ -28,9 +30,7 @@ Once NVM is installed, you can use Node Package Manager to complete the installa
 
 `npm run deploy`
 
-Website is live at https://username.github.io/reponame/
-
-https://CyprianESPI.github.io/odin-template/
+Website is live at https://username.github.io/knights-travails/
 
 #### Fix deploy in case of rebase
 
