@@ -12,6 +12,7 @@ class Board {
 
         this.container = cont;
         this.knightPosition = knight_position;
+        this.path = [];
     }
 
     createSquare(row, col) {
@@ -22,8 +23,22 @@ class Board {
             square.className = "square dark";
 
         square.addEventListener('click', (e) => {
+            // Only execute one path at a time
+            if (this.path.length !== 0)
+                return;
+
             const path = Knight.moves(this.knightPosition, [row, col]);
-            console.log("Knigh path:", path);
+            path.forEach(pos => {
+                this.path.push(pos);
+            });
+            console.log("Knigh path:", this.path);
+            for (var i = 0; i < this.path.length; i++) {
+                setTimeout(() => {
+                    console.log(`Delayed for ${i * 1000} ms.`);
+                    this.knightPosition = this.path.shift();
+                    this.render();
+                }, i * 1000);
+            }
         });
         return square;
     }
