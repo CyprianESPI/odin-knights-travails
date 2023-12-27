@@ -1,3 +1,8 @@
+:root {
+    --clr-dark: rgb(184, 139, 74);
+    --clr-light: rgb(227, 193, 111);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -23,15 +28,27 @@ body {
 
 #chessboard {
     display: grid;
-    grid-template-rows: 1fr auto;
-    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr 50px;
+    grid-template-columns: 50px 1fr;
     margin: auto;
     aspect-ratio: 1;
     height: min(90vh, 90vw);
 
-    border: 10px solid rgb(184, 139, 74);
+    background-color: var(--clr-light);
+    border: 10px solid var(--clr-dark);
     box-shadow: rgba(0, 0, 0, 0.50) 0px 5px 15px;
     border-radius: 15px;
+}
+
+.numbers {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+}
+
+.letters {
+    display: flex;
+    justify-content: space-around;
 }
 
 /* Part of the style is defined in board.js */
@@ -42,12 +59,12 @@ body {
 }
 
 .light {
-    background-color: rgb(227, 193, 111);
+    background-color: var(--clr-light);
     color: black;
 }
 
 .dark {
-    background-color: rgb(184, 139, 74);
+    background-color: var(--clr-dark);
     color: black;
 }
 
