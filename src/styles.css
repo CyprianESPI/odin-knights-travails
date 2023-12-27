@@ -46,3 +46,7 @@ main {
 .target {
     background-color: red;
 }
+
+.busy {
+    cursor: default;
+}

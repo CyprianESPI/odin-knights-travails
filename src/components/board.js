@@ -6,7 +6,7 @@ class Board {
 
     constructor(knight_position) {
         const cont = document.createElement("div");
-        cont.className = "board";
+        cont.className = "board not-busy";
         cont.style.gridTemplateColumns = `repeat(${Board.SIZE}, minmax(0, 1fr))`;
         cont.style.gridAutoRows = "1fr";
 
@@ -60,10 +60,13 @@ class Board {
                 if (row == this.knightPosition[0]
                     && col == this.knightPosition[1]) {
                     square.innerText = "♞";
-                } else if (this.path.length !== 0
-                    && row == this.path[this.path.length - 1][0]
-                    && col == this.path[this.path.length - 1][1]) {
-                    square.className += " target";
+                    square.className += " busy";
+                } else if (this.path.length !== 0) {
+                    square.className += " busy";
+                    if (row == this.path[this.path.length - 1][0]
+                        && col == this.path[this.path.length - 1][1]) {
+                        square.className += " target";
+                    }
                 }
                 this.container.appendChild(square);
             }
