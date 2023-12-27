@@ -26,7 +26,6 @@ main {
     aspect-ratio: 1;
     height: min(90vh, 90vw);
 
-
     border: 10px solid rgb(184, 139, 74);
     box-shadow: rgba(0, 0, 0, 0.50) 0px 5px 15px;
     border-radius: 15px;
