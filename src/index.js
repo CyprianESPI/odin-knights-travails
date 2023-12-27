@@ -1,10 +1,22 @@
 import Styles from "./styles.css";
 import Knight from "./components/knight";
+import Board from "./components/board";
 
 // ================= //
 // DOM interaction
 // ================= //
+const BOARD = new Board();
 const MAIN = document.querySelector("main");
+MAIN.style.gridTemplateColumns = "1fr ".repeat(Board.SIZE);
+
+
+function render() {
+    console.log("Rendering...");
+
+    BOARD.render(MAIN);
+
+    console.log("Rendered!");
+}
 
 // ================= //
 // Main
@@ -20,6 +32,8 @@ function main() {
     console.log(res);
 
     console.log("Initialazed!");
+
+    render();
 }
 
 main();
