@@ -1,6 +1,7 @@
 :root {
     --clr-dark: rgb(184, 139, 74);
-    --clr-light: rgb(227, 193, 111);
+    --clr-light: rgb(227, 192, 111);
+    --clr-lighter: #FFD57C;
 }
 
 * {
@@ -40,7 +41,8 @@ body {
 }
 
 main {
-    border: 10px solid var(--clr-dark);
+    border: 10px solid var(--clr-lighter);
+    /*var(--clr-dark);*/
 }
 
 h2 {
