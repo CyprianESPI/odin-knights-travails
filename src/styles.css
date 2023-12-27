@@ -43,6 +43,10 @@ main {
     cursor: pointer;
 }
 
+.square:hover {
+    background-color: red;
+}
+
 .target {
     background-color: red;
 }
