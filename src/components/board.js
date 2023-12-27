@@ -3,19 +3,22 @@ import Utils from "./utils";
 class Board {
     static SIZE = 8;
 
-    constructor() {
+    constructor(knight_position) {
         const cont = document.createElement("div");
         cont.className = "board";
-        cont.style.gridTemplateColumns = "1fr ".repeat(Board.SIZE);
+        cont.style.gridTemplateColumns = `repeat(${Board.SIZE}, minmax(0, 1fr))`;
+        cont.style.gridAutoRows = "1fr";
+
         this.container = cont;
+        this.knightPosition = knight_position;
     }
 
     createSquare(row, col) {
         const square = document.createElement("div");
         if ((row + col) % 2 === 0)
-            square.className = "light";
+            square.className = "square light";
         else
-            square.className = "dark";
+            square.className = "square dark";
         return square;
     }
 
@@ -25,6 +28,11 @@ class Board {
         for (let row = 0; row < Board.SIZE; row++) {
             for (let col = 0; col < Board.SIZE; col++) {
                 const square = this.createSquare(row, col);
+                // Add knight
+                if (row == this.knightPosition[0]
+                    && col == this.knightPosition[1]) {
+                    square.innerText = "♞";
+                }
                 this.container.appendChild(square);
             }
         }

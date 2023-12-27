@@ -5,7 +5,7 @@ import Board from "./components/board";
 // ================= //
 // DOM interaction
 // ================= //
-const BOARD = new Board();
+const BOARD = new Board([0, 0]);
 const MAIN = document.querySelector("main");
 MAIN.appendChild(BOARD.container);
 

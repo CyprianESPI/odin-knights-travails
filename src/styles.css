@@ -29,4 +29,14 @@ main {
 
 .dark {
     background-color: black;
+    color: white;
+}
+
+.square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* https://www.sitepoint.com/new-css3-relative-font-size/
+    vmin means 'whichever is smaller between the 1% of the ViewPort's height and the 1% of the ViewPort's width'.*/
+    font-size: 7vmin;
 }
