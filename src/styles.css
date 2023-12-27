@@ -42,3 +42,7 @@ main {
     /* Avoids having write cursor on Knight div */
     cursor: pointer;
 }
+
+.target {
+    background-color: red;
+}

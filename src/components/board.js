@@ -60,6 +60,10 @@ class Board {
                 if (row == this.knightPosition[0]
                     && col == this.knightPosition[1]) {
                     square.innerText = "♞";
+                } else if (this.path.length !== 0
+                    && row == this.path[this.path.length - 1][0]
+                    && col == this.path[this.path.length - 1][1]) {
+                    square.className += " target";
                 }
                 this.container.appendChild(square);
             }
