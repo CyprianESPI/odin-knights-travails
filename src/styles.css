@@ -52,6 +52,7 @@ h2 {
     display: flex;
     justify-content: space-around;
     color: var(--clr-dark);
+    filter: brightness(0.50);
 }
 
 .numbers {
