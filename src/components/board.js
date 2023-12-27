@@ -27,17 +27,24 @@ class Board {
             if (this.path.length !== 0)
                 return;
 
+            // Do not compute if same position as knight
+            if (this.knightPosition[0] == row
+                && this.knightPosition[1] == col)
+                return;
+
             const path = Knight.moves(this.knightPosition, [row, col]);
+            // Remove first position as its the kinght's one
+            path.shift();
             path.forEach(pos => {
                 this.path.push(pos);
             });
             console.log("Knigh path:", this.path);
             for (var i = 0; i < this.path.length; i++) {
                 setTimeout(() => {
-                    console.log(`Delayed for ${i * 1000} ms.`);
+                    console.log(`Delayed for ${i * 500} ms.`);
                     this.knightPosition = this.path.shift();
                     this.render();
-                }, i * 1000);
+                }, i * 500);
             }
         });
         return square;
