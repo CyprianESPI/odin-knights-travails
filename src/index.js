@@ -7,13 +7,12 @@ import Board from "./components/board";
 // ================= //
 const BOARD = new Board();
 const MAIN = document.querySelector("main");
-MAIN.style.gridTemplateColumns = "1fr ".repeat(Board.SIZE);
-
+MAIN.appendChild(BOARD.container);
 
 function render() {
     console.log("Rendering...");
 
-    BOARD.render(MAIN);
+    BOARD.render();
 
     console.log("Rendered!");
 }

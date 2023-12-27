@@ -15,5 +15,15 @@ body {
 }
 
 main {
+    margin-top: auto;
+    margin-bottom: auto;
+    justify-content: center;
+    aspect-ratio: 1;
+}
+
+/* Part of the style is defined in board.js */
+.board {
     display: grid;
+    height: 100%;
+    width: 100%;
 }
