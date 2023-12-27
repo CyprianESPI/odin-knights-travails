@@ -1,6 +1,6 @@
 # Odin Knights Travails
 
-https://username.github.io/knights-travails/
+https://cyprianespi.github.io/odin-knights-travails/
 
 ## Webpack for web
 
@@ -30,7 +30,7 @@ Once NVM is installed, you can use Node Package Manager to complete the installa
 
 `npm run deploy`
 
-Website is live at https://username.github.io/knights-travails/
+Website is live at https://cyprianespi.github.io/odin-knights-travails/
 
 #### Fix deploy in case of rebase
 
