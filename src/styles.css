@@ -21,6 +21,7 @@ main {
 
 /* Part of the style is defined in board.js */
 .board {
+    border: 10px solid black;
     display: grid;
     height: 100%;
     width: 100%;
