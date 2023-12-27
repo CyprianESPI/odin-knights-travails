@@ -27,8 +27,8 @@ body {
 
 #chessboard {
     display: grid;
-    grid-template-rows: 50px 1fr 50px;
-    grid-template-columns: 50px 1fr 50px;
+    grid-template-rows: 3vw 1fr 3vw;
+    grid-template-columns: 3vw 1fr 3vw;
     margin: auto;
     aspect-ratio: 1;
     height: min(90vh, 90vw);
@@ -45,6 +45,12 @@ main {
 
 h2 {
     margin: auto;
+}
+
+@media only screen and (max-width: 1026px) {
+    h2 {
+        display: none;
+    }
 }
 
 .numbers,
