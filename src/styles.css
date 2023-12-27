@@ -43,6 +43,10 @@ main {
     border: 10px solid var(--clr-dark);
 }
 
+h2 {
+    margin: auto;
+}
+
 .numbers,
 .letters {
     display: flex;
