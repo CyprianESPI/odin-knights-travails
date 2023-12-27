@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    border: 2px solid red;
 }
 
 /*border: 2px solid red;*/
@@ -15,10 +14,9 @@ body {
 }
 
 main {
-    margin-top: auto;
-    margin-bottom: auto;
-    justify-content: center;
+    margin: auto;
     aspect-ratio: 1;
+    height: min(75vh, 75vw);
 }
 
 /* Part of the style is defined in board.js */
@@ -26,4 +24,8 @@ main {
     display: grid;
     height: 100%;
     width: 100%;
+}
+
+.dark {
+    background-color: black;
 }
