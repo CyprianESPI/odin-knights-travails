@@ -19,7 +19,9 @@ class Knight {
             for (const [key, value] of Object.entries(result)) {
                 console.log("Start move...", `${key}: ${value}`);
 
-                Knight.POSSIBLE_MOVES.forEach(possible_move => {
+                // We use a regular for loop instead of foreach.
+                // Foreach cannot be stopped with a simple return
+                for (const possible_move of Knight.POSSIBLE_MOVES) {
                     const start_pos = value[value.length - 1];
                     const end_pos = [
                         start_pos[0] + possible_move[0],
@@ -30,17 +32,23 @@ class Knight {
                     // Copy the path array
                     const new_path = value.slice(); //.push(end_pos);
                     new_path.push(end_pos);
+
                     // Add to dict
                     const new_key = Knight.getPosKey(end_pos);
                     result[new_key] = new_path;
 
-                    // Todo check if destination is in dict
-                });
+                    // Check if we reached destination
+                    if (end_pos[0] === destination[0]
+                        && end_pos[1] === destination[1]) {
+                        console.log("Found path:", new_path);
+                        return new_path;
+                    }
+                }
             }
         }
 
-        console.log(result);
-        return true;
+        console.log("Path not found...", result);
+        return result;
     }
 
     // List all possible moves x,y moves
