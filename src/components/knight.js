@@ -10,7 +10,8 @@ class Knight {
     // origin/destination is an array of numbers [x, y]
     static moves(origin, destination) {
         console.log(origin, destination);
-        const max_depth = 2;
+        // TODO: compute what's the real max depth...
+        const max_depth = 15;
         const origin_key = Knight.getPosKey(origin);
         const result = {};
         result[origin_key] = [origin];
