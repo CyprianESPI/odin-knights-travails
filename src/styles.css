@@ -21,7 +21,10 @@ body {
     text-align: center;
 }
 
-main {
+#chessboard {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    grid-template-columns: auto 1fr;
     margin: auto;
     aspect-ratio: 1;
     height: min(90vh, 90vw);
