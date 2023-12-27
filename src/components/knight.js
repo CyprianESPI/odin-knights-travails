@@ -30,9 +30,9 @@ class Knight {
                         start_pos[0] + possible_move[0],
                         start_pos[1] + possible_move[1],
                     ];
-                    // Check move is valid (within board 8x8)
-                    if (end_pos[0] < 0 || end_pos[0] > Board.SIZE
-                        || end_pos[1] < 0 || end_pos[1] > Board.SIZE) {
+                    // Check move is valid (within board 8x8 - range is 0-7)
+                    if (end_pos[0] < 0 || end_pos[0] >= Board.SIZE
+                        || end_pos[1] < 0 || end_pos[1] >= Board.SIZE) {
                         continue;
                     }
 
