@@ -38,10 +38,10 @@ class Board {
             path.forEach(pos => {
                 this.path.push(pos);
             });
-            console.log("Knigh path:", this.path);
+            console.debug("Knight path:", this.path);
             for (var i = 0; i < this.path.length; i++) {
                 setTimeout(() => {
-                    console.log(`Delayed for ${i * 500} ms.`);
+                    console.debug(`Delayed for ${i * 500} ms.`);
                     this.knightPosition = this.path.shift();
                     this.render();
                 }, i * 500);
@@ -51,6 +51,7 @@ class Board {
     }
 
     render() {
+        console.debug("Rendering board...");
         Utils.removeContent(this.container);
 
         for (let row = 0; row < Board.SIZE; row++) {
@@ -72,6 +73,7 @@ class Board {
             }
         }
 
+        console.debug("Rendered board!");
     }
 }
 export default Board;

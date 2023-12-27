@@ -3,13 +3,13 @@ import Board from "./board";
 class Knight {
     static getPosKey(position) {
         const key = `${position[0]}_${position[1]}`;
-        console.log(key, position);
+        console.debug(key, position);
         return key;
     }
 
     // origin/destination is an array of numbers [x, y]
     static moves(origin, destination) {
-        console.log(origin, destination);
+        console.debug(origin, destination);
         // TODO: compute what's the real max depth...
         const max_depth = 15;
         const origin_key = Knight.getPosKey(origin);
@@ -17,10 +17,10 @@ class Knight {
         result[origin_key] = [origin];
 
         for (let d = 0; d < max_depth; d++) {
-            console.log("Depth:", d);
+            console.debug("Depth:", d);
             // TODO: do not recompute already computed keys
             for (const [key, value] of Object.entries(result)) {
-                console.log("Start move...", `${key}: ${value}`);
+                console.debug("Start move...", `${key}: ${value}`);
 
                 // We use a regular for loop instead of foreach.
                 // Foreach cannot be stopped with a simple return
@@ -48,15 +48,16 @@ class Knight {
                     if (end_pos[0] === destination[0]
                         && end_pos[1] === destination[1]) {
                         console.log("Found path:", new_path);
-                        console.log("All paths:", result);
+                        console.debug("All paths:", result);
                         return new_path;
                     }
                 }
             }
         }
 
-        console.log("Path not found...", result);
-        return result;
+        // If we reached here, something went wrong...
+        console.error("Path not found...", result);
+        return null;
     }
 
     // List all possible moves x,y moves

@@ -27,8 +27,8 @@ function main() {
     const params = new URLSearchParams(document.location.search);
     console.log(params);
 
-    const res = Knight.moves([0, 0], [3, 3]);
-    console.log(res);
+    //const res = Knight.moves([0, 0], [3, 3]);
+    //console.log(res);
 
     console.log("Initialazed!");
 
