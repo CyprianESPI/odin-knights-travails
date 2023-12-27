@@ -38,7 +38,7 @@ main {
     align-items: center;
     /* https://www.sitepoint.com/new-css3-relative-font-size/
     vmin means 'whichever is smaller between the 1% of the ViewPort's height and the 1% of the ViewPort's width'.*/
-    font-size: 7vmin;
+    font-size: 6vmin;
     /* Avoids having write cursor on Knight div */
     cursor: pointer;
 }
